@@ -1,0 +1,17 @@
+[Unit]
+Description=gunicorn daemon
+Requires=gunicorn.socket
+After=network.target
+
+[Service]
+PIDFile=/run/gunicorn/pid
+User=nginx
+Group=nginx
+WorkingDirectory={{ pillar['app_dir'] }}
+ExecStart={{ pillar['app_dir'] }}/env/bin/gunicorn -c {{ pillar['gunicorn']['config'] }} app:app
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s TERM $MAINPID
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

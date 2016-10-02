@@ -1,0 +1,8 @@
+[Unit]
+Description=gunicorn socket
+
+[Socket]
+ListenStream={{ pillar['app_dir'] }}/gunicorn.socket
+
+[Install]
+WantedBy=sockets.target

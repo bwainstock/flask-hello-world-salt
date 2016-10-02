@@ -1,0 +1,6 @@
+base:
+  '*':
+    - common
+
+  'web*':
+    - web
