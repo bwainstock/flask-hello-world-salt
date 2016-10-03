@@ -1,11 +1,11 @@
 base:
-  '*':
-    - common
+  'helloworld-*':
+    - helloworld-common
 
-  'web*':
-    - app
-    - gunicorn
-    - nginx
+  'helloworld-web*':
+    - helloworld-app
+    - helloworld-gunicorn
+    - helloworld-nginx
 
-  'haproxy*':
-    - haproxy
+  'helloworld-haproxy*':
+    - helloworld-haproxy

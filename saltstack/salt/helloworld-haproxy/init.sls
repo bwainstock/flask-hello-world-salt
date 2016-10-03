@@ -7,5 +7,5 @@ haproxy:
 
 /etc/haproxy/haproxy.cfg:
   file.managed:
-    - source: salt://haproxy/config
+    - source: salt://helloworld-haproxy/config
     - template: jinja

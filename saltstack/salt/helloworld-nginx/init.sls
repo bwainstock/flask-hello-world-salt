@@ -8,7 +8,7 @@ nginx:
 
 /etc/nginx/nginx.conf:
   file.managed:
-    - source: salt://nginx/nginx.conf
+    - source: salt://helloworld-nginx/nginx.conf
     - user: root
     - group: root
     - mode: 644

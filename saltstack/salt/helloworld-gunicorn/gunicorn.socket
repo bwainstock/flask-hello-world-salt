@@ -2,7 +2,7 @@
 Description=gunicorn socket
 
 [Socket]
-ListenStream={{ pillar['app_dir'] }}/gunicorn.socket
+ListenStream=0.0.0.0:8113
 
 [Install]
 WantedBy=sockets.target

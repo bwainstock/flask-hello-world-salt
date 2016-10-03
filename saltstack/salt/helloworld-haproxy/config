@@ -26,6 +26,6 @@ backend nodes
     option forwardfor
     http-request set-header X-Forwarded-Port %[dst_port]
 
-{% for server, addrs in salt['mine.get']('web*', 'network.ip_addrs', expr_form='glob') | dictsort() %}
-server {{ server }} {{ addrs[0] }}:8000 check
+{% for server, addrs in salt['mine.get']('helloworld-web*', 'network.ip_addrs', expr_form='glob') | dictsort() %}
+server {{ server }} {{ addrs[0] }}:8080 check
 {% endfor %}

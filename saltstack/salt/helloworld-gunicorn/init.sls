@@ -1,6 +1,6 @@
 /etc/systemd/system/gunicorn.service:
   file.managed:
-    - source: salt://gunicorn/gunicorn.service
+    - source: salt://helloworld-gunicorn/gunicorn.service
     - user: root
     - group: root
     - mode: 755
@@ -8,7 +8,7 @@
 
 /etc/systemd/system/gunicorn.socket:
   file.managed:
-    - source: salt://gunicorn/gunicorn.socket
+    - source: salt://helloworld-gunicorn/gunicorn.socket
     - user: root
     - group: root
     - mode: 755
@@ -20,3 +20,8 @@ gunicorn:
     - watch: 
       - file: /etc/systemd/system/gunicorn.service
       - git: flask-hello-world
+
+httpd_can_network_connect:
+  selinux.boolean:
+    - value: True
+    - persist: True

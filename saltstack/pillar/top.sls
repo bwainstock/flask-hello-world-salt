@@ -1,6 +1,7 @@
 base:
-  '*':
-    - common
+  'helloworld-*':
+    - helloworld-common
 
-  'web*':
-    - web
+  'helloworld-web*':
+    - helloworld-web
+    - helloworld-app

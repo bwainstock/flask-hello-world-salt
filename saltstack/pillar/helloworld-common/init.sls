@@ -1,4 +1,4 @@
 mine_functions:
-  network.ip_addrs: [enp0s8]
+  network.ip_addrs: [eth0]
 
 app_dir: /usr/share/nginx/app

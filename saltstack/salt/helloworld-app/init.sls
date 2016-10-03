@@ -16,6 +16,7 @@ flask-hello-world:
 /usr/share/nginx/app/env:
   virtualenv.managed:
     - requirements: {{ pillar['app_dir'] }}/requirements.txt
+    - python: python3
     - require:
       - pkg: git-python34-installed
 
