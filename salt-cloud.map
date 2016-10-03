@@ -1,0 +1,5 @@
+rhel_ec2:
+  - helloworld-web1
+  - helloworld-web2
+  - helloworld-web3
+  - helloworld-haproxy
